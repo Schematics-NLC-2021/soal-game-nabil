@@ -1,0 +1,603 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "startState",
+			"type": "string",
+			"initialValue": "3,4,6|9,8,7|6,8,9",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 415820001075188
+		},
+		{
+			"eventType": "variable",
+			"name": "Neighbours",
+			"type": "string",
+			"initialValue": "1,0|-1,0|0,1|0,-1|1,1|1,-1|-1,1|-1,-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 881175497698864
+		},
+		{
+			"eventType": "variable",
+			"name": "startX",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 435212662112742
+		},
+		{
+			"eventType": "variable",
+			"name": "startY",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 614444575362077
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 502524105799708
+		},
+		{
+			"eventType": "variable",
+			"name": "turn",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 429652950561420
+		},
+		{
+			"eventType": "variable",
+			"name": "xGridClicked",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 430347349793626
+		},
+		{
+			"eventType": "variable",
+			"name": "yGridClicked",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 626214265468422
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 319950563754405
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "TombolAngka",
+					"sid": 882988334957343
+				}
+			],
+			"sid": 652675934600445,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 735136731515668,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 237381177260038,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 118691696092872,
+									"parameters": {
+										"name": "\"j\"",
+										"start-index": "0",
+										"end-index": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 382344218724973,
+									"parameters": {
+										"object-to-create": "TombolAngka",
+										"layer": "0",
+										"x": "150 + 200*loopindex(\"j\")",
+										"y": "150 + 200*loopindex(\"i\")",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "TombolAngka",
+									"sid": 190512939288623,
+									"parameters": {
+										"frame-number": "int(tokenat(tokenat(startState, loopindex(\"i\"), \"|\"), loopindex(\"j\"), \",\")) - 1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TombolAngka",
+									"sid": 792305208682350,
+									"parameters": {
+										"animation": "\"Pickable\"",
+										"from": "current-frame"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "TombolAngka",
+									"sid": 358998466167444,
+									"parameters": {
+										"instance-variable": "xGrid",
+										"value": "loopindex(\"j\")"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "TombolAngka",
+									"sid": 926753447709810,
+									"parameters": {
+										"instance-variable": "yGrid",
+										"value": "loopindex(\"i\")"
+									}
+								}
+							],
+							"sid": 523534768860657
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SpriteFont",
+					"sid": 532283484123252,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 651534197719600,
+					"parameters": {
+						"text": "score"
+					}
+				}
+			],
+			"sid": 789735360987563
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 758729081363695,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TombolAngka"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "TombolAngka",
+					"sid": 347232572135239,
+					"parameters": {
+						"animation": "\"Pickable\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 363789342036700,
+					"parameters": {
+						"variable": "score",
+						"value": "turn % 2 = 1 ? (TombolAngka.AnimationFrame+1) : (TombolAngka.AnimationFrame+1) * -1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 310390709819411,
+					"parameters": {
+						"variable": "turn",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TombolAngka",
+					"sid": 816643531233124,
+					"parameters": {
+						"animation": "\"Picked\"",
+						"from": "current-frame"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 492939550271666,
+					"parameters": {
+						"variable": "xGridClicked",
+						"value": "TombolAngka.xGrid"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 646274051133906,
+					"parameters": {
+						"variable": "yGridClicked",
+						"value": "TombolAngka.yGrid"
+					}
+				},
+				{
+					"callFunction": "setPickable",
+					"sid": 331029695459649
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 587703184318675
+				}
+			],
+			"sid": 315325587755953,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 182662074314970,
+							"parameters": {
+								"first-value": "Functions.countPickable",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 711257827380102,
+							"parameters": {
+								"object": "TombolAngka"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "TombolAngka",
+							"sid": 489786842474363,
+							"parameters": {
+								"animation": "TombolAngka.AnimationName = \"Unpicked\" ? \"Pickable\" : \"Picked\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 160103405455237
+				}
+			]
+		},
+		{
+			"functionName": "setPickable",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 748612146963204,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "TombolAngka",
+							"sid": 607498233103413,
+							"parameters": {
+								"animation": "\"Picked\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 819774529687704,
+							"parameters": {
+								"object": "TombolAngka"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 951788951094548,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 176987846768610,
+									"parameters": {
+										"first-value": "Functions.isPickable(TombolAngka.UID)",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TombolAngka",
+									"sid": 885620967245214,
+									"parameters": {
+										"animation": "\"Pickable\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 205611523079661
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 398512433268480
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TombolAngka",
+									"sid": 198023529515444,
+									"parameters": {
+										"animation": "\"Unpicked\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 444214096579941
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "isPickable",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "TombolUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 821072307984993
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 159888500572850,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "returning",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 227283593850985
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 968397171028083,
+							"parameters": {
+								"object": "TombolAngka",
+								"expression": "TombolAngka.UID",
+								"comparison": 0,
+								"value": "TombolUid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 394719447969580,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 821473197769547,
+									"parameters": {
+										"name": "\"i\"",
+										"start-index": "0",
+										"end-index": "tokencount(Neighbours, \",\") - 2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 613080581064277,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "TombolAngka",
+											"sid": 535602641427535,
+											"parameters": {
+												"instance-variable": "xGrid",
+												"comparison": 0,
+												"value": "xGridClicked + int(tokenat(tokenat(Neighbours, loopindex(\"i\"), \"|\"), 0, \",\"))"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "TombolAngka",
+											"sid": 645921476050819,
+											"parameters": {
+												"instance-variable": "yGrid",
+												"comparison": 0,
+												"value": "yGridClicked + int(tokenat(tokenat(Neighbours, loopindex(\"i\"), \"|\"), 1, \",\"))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 348447370543418,
+											"parameters": {
+												"variable": "returning",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 200706624548219,
+											"parameters": {
+												"value": "returning"
+											}
+										}
+									],
+									"sid": 306687224657450
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "countPickable",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 163851003300505,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "returning",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 616419898485591
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 124543204864019,
+							"parameters": {
+								"object": "TombolAngka"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "TombolAngka",
+							"sid": 852633857280256,
+							"parameters": {
+								"animation": "\"Pickable\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 834979876469157,
+							"parameters": {
+								"variable": "returning",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 801870046912256,
+							"parameters": {
+								"value": "returning"
+							}
+						}
+					],
+					"sid": 705480330275861
+				}
+			]
+		}
+	],
+	"sid": 184656483622198
+}
