@@ -45,7 +45,9 @@
 			"TombolAngka",
 			"SpriteFont",
 			"Mouse",
-			"Browser"
+			"Browser",
+			"SoalGameBG",
+			"scoreframe"
 		],
 		"subfolders": []
 	},

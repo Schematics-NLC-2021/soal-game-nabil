@@ -134,12 +134,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 382344218724973,
+									"sid": 182330739310075,
 									"parameters": {
 										"object-to-create": "TombolAngka",
 										"layer": "0",
-										"x": "150 + 200*loopindex(\"j\")",
-										"y": "150 + 200*loopindex(\"i\")",
+										"x": "416+ 152*loopindex(\"j\")",
+										"y": "208+ 152*loopindex(\"i\")",
 										"create-hierarchy": false
 									}
 								},
