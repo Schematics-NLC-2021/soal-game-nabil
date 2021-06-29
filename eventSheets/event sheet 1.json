@@ -25,21 +25,61 @@
 			"eventType": "variable",
 			"name": "startX",
 			"type": "number",
-			"initialValue": "150",
+			"initialValue": "416",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 435212662112742
 		},
 		{
 			"eventType": "variable",
 			"name": "startY",
 			"type": "number",
-			"initialValue": "150",
+			"initialValue": "208",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 614444575362077
+		},
+		{
+			"eventType": "variable",
+			"name": "distX",
+			"type": "number",
+			"initialValue": "152",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 343139696426023
+		},
+		{
+			"eventType": "variable",
+			"name": "distY",
+			"type": "number",
+			"initialValue": "152",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 973797656665249
+		},
+		{
+			"eventType": "variable",
+			"name": "Column",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 609157358527966
+		},
+		{
+			"eventType": "variable",
+			"name": "Row",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 343202859420165
 		},
 		{
 			"eventType": "variable",
@@ -82,6 +122,16 @@
 			"sid": 626214265468422
 		},
 		{
+			"eventType": "variable",
+			"name": "Reset",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 347182203103582
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -105,11 +155,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 735136731515668,
+							"sid": 949759264650142,
 							"parameters": {
 								"name": "\"i\"",
 								"start-index": "0",
-								"end-index": "2"
+								"end-index": "Row"
 							}
 						}
 					],
@@ -122,11 +172,11 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 118691696092872,
+									"sid": 682520062601370,
 									"parameters": {
 										"name": "\"j\"",
 										"start-index": "0",
-										"end-index": "2"
+										"end-index": "Column"
 									}
 								}
 							],
@@ -210,6 +260,32 @@
 				}
 			],
 			"sid": 789735360987563
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SpriteFont",
+					"sid": 397430329818034,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 448450420056213,
+					"parameters": {
+						"text": "\"Jatah : \"&Reset"
+					}
+				}
+			],
+			"sid": 594747221078872
 		},
 		{
 			"eventType": "block",
@@ -471,11 +547,11 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 821473197769547,
+									"sid": 545952639248134,
 									"parameters": {
 										"name": "\"i\"",
 										"start-index": "0",
-										"end-index": "tokencount(Neighbours, \",\") - 2"
+										"end-index": "tokencount(Neighbours, \"|\") - 1"
 									}
 								}
 							],
@@ -595,6 +671,98 @@
 						}
 					],
 					"sid": 705480330275861
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 177826804701534,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TombolReset"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 907934348806628,
+					"parameters": {
+						"variable": "Reset",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 978319404295469,
+					"parameters": {
+						"variable": "score",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 729441148960176,
+					"parameters": {
+						"variable": "turn",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "TombolAngka",
+					"sid": 618051697549417,
+					"parameters": {
+						"animation": "\"Pickable\"",
+						"from": "current-frame"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 529658492156975,
+					"parameters": {
+						"variable": "Reset",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 550344921170168,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 676473495631227,
+							"parameters": {
+								"variable": "Reset",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "TombolReset",
+							"sid": 975849524344647,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 317183350209937
 				}
 			]
 		}

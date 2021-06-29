@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 24100,
+	"savedWithRelease": 25102,
 	"name": "game-nabil",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r251.2",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r251.2",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r251.2",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r251.2",
 			"bundled": false
 		}
 	],
@@ -47,7 +47,8 @@
 			"Mouse",
 			"Browser",
 			"SoalGameBG",
-			"scoreframe"
+			"scoreframe",
+			"TombolReset"
 		],
 		"subfolders": []
 	},
@@ -205,6 +206,8 @@
 		"compositingMode": "standard",
 		"sampling": "trilinear",
 		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
