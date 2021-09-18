@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 25102,
+	"savedWithRelease": 26000,
 	"name": "game-nabil",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r251.2",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r251.2",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r251.2",
+			"version": "r260",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r251.2",
+			"version": "r260",
 			"bundled": false
 		}
 	],
@@ -48,7 +48,7 @@
 			"Browser",
 			"SoalGameBG",
 			"scoreframe",
-			"TombolReset"
+			"Tombol"
 		],
 		"subfolders": []
 	},
@@ -197,9 +197,7 @@
 			1,
 			0
 		],
-		"useHighDpi": true,
 		"orientations": "landscape",
-		"enableWebGL": true,
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
@@ -211,8 +209,6 @@
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
-		"clearBackground": true,
-		"enhancedAccelerationPrecision": true,
 		"cordovaiOSScheme": "app"
 	},
 	"viewportWidth": 1280,

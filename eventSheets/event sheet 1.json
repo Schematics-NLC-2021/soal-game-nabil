@@ -232,6 +232,30 @@
 							"sid": 523534768860657
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 496126980292540,
+							"parameters": {
+								"animation": "\"submit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 683501244701636,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 172545376606785
 				}
 			]
 		},
@@ -401,6 +425,40 @@
 						}
 					],
 					"sid": 160103405455237
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 799544038676127,
+							"parameters": {
+								"variable": "turn",
+								"comparison": 0,
+								"value": "10"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 806944808827793,
+							"parameters": {
+								"animation": "\"submit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 132070182937657,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 804276304932285
 				}
 			]
 		},
@@ -684,85 +742,180 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "TombolReset"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 907934348806628,
-					"parameters": {
-						"variable": "Reset",
-						"comparison": 4,
-						"value": "0"
+						"object-clicked": "Tombol"
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 978319404295469,
-					"parameters": {
-						"variable": "score",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 729441148960176,
-					"parameters": {
-						"variable": "turn",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "TombolAngka",
-					"sid": 618051697549417,
-					"parameters": {
-						"animation": "\"Pickable\"",
-						"from": "current-frame"
-					}
-				},
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 529658492156975,
-					"parameters": {
-						"variable": "Reset",
-						"value": "1"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 550344921170168,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 996325315397090,
+							"parameters": {
+								"animation": "\"reset\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 650286843185503,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 676473495631227,
+							"sid": 871804030871647,
 							"parameters": {
 								"variable": "Reset",
-								"comparison": 0,
+								"comparison": 4,
 								"value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 120705712790467,
+							"parameters": {
+								"variable": "score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 119017371485187,
+							"parameters": {
+								"variable": "turn",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "TombolAngka",
+							"sid": 731811004363812,
+							"parameters": {
+								"animation": "\"Pickable\"",
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 685307061277603,
+							"parameters": {
+								"variable": "Reset",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 368463181418512,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 864154569537786,
+									"parameters": {
+										"variable": "Reset",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Tombol",
+									"sid": 257242817811938,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 344951772044835
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 303096566621259,
+									"parameters": {
+										"object": "Tombol"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Tombol",
+									"sid": 186825647857989,
+									"parameters": {
+										"animation": "\"submit\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Tombol",
+									"sid": 100357310851453,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 461635515849504
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 892820350211208,
+							"parameters": {
+								"animation": "\"submit\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 350384966393733,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "parent.c3_callFunction(\"sendScore\", [runtime.globalVars.score]);\nconsole.log(runtime.globalVars.score + \" dikirim\");"
+						},
+						{
 							"id": "set-animation-frame",
-							"objectClass": "TombolReset",
-							"sid": 975849524344647,
+							"objectClass": "Tombol",
+							"sid": 215149297956731,
 							"parameters": {
 								"frame-number": "1"
 							}
 						}
 					],
-					"sid": 317183350209937
+					"sid": 152833323731638
 				}
 			]
 		}

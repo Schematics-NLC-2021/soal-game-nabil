@@ -1,5 +1,5 @@
 {
-	"name": "TombolReset",
+	"name": "Tombol",
 	"plugin-id": "Sprite",
 	"sid": 271426634021394,
 	"isGlobal": false,
@@ -36,7 +36,42 @@
 					}
 				],
 				"sid": 687585766807162,
-				"name": "Animation 1",
+				"name": "reset",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 156,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4491971,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 156,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9672882,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 895046183673655,
+				"name": "submit",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

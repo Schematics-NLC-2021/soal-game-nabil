@@ -58,6 +58,7 @@
 			"renderingMode": "3d",
 			"useRenderCells": false,
 			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		},
 		{
@@ -167,10 +168,10 @@
 					}
 				},
 				{
-					"type": "TombolReset",
+					"type": "Tombol",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "reset",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -180,7 +181,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 923,
-						"y": 303,
+						"y": 356,
 						"width": 156,
 						"height": 45,
 						"originX": 0.5,
@@ -220,9 +221,38 @@
 					"behaviors": {},
 					"world": {
 						"x": 923,
-						"y": 343.3801018697069,
+						"y": 396,
 						"width": 155.66312605659255,
 						"height": 42.31579483753697,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Tombol",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "submit",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 923,
+						"y": 298,
+						"width": 156,
+						"height": 45,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -259,6 +289,7 @@
 			"renderingMode": "3d",
 			"useRenderCells": false,
 			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		}
 	],
@@ -268,5 +299,7 @@
 	"width": 1280,
 	"height": 720,
 	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
 	"eventSheet": "Event sheet 1"
 }
