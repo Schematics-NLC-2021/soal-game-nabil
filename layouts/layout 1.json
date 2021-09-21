@@ -181,9 +181,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 923,
-						"y": 356,
+						"y": 375.6781269039969,
 						"width": 156,
-						"height": 45,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -221,7 +221,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 923,
-						"y": 396,
+						"y": 421.41015488383744,
 						"width": 155.66312605659255,
 						"height": 42.31579483753697,
 						"originX": 0.5,
@@ -252,7 +252,7 @@
 						"x": 923,
 						"y": 298,
 						"width": 156,
-						"height": 45,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
