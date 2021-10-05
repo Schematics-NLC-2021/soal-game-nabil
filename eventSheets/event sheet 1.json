@@ -145,6 +145,17 @@
 					"id": "destroy",
 					"objectClass": "TombolAngka",
 					"sid": 882988334957343
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "timerManager",
+					"sid": 390903378046506,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "600",
+						"type": "once",
+						"tag": "\"timer\""
+					}
 				}
 			],
 			"sid": 652675934600445,
@@ -256,6 +267,43 @@
 						}
 					],
 					"sid": 172545376606785
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 591612660180865,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 134338478820580,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "SpriteFont",
+							"sid": 940283283315246,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 206891814109478,
+					"isOrBlock": true
 				}
 			]
 		},
@@ -916,6 +964,210 @@
 						}
 					],
 					"sid": 152833323731638
+				}
+			]
+		},
+		{
+			"functionName": "getTimerMinute",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 310233406212083,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "minute",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 630727059658234
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 680729154903546,
+							"parameters": {
+								"variable": "minute",
+								"value": "floor((timerManager.Timer.Duration(\"timer\") -timerManager.Timer.CurrentTime(\"timer\"))/60)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 114065937315412,
+							"parameters": {
+								"value": "str(minute > 9 ? minute : (\"0\"&minute))"
+							}
+						}
+					],
+					"sid": 908620811825651
+				}
+			]
+		},
+		{
+			"functionName": "getTimerSecond",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 164777314671265,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "second",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 114800883547331
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 433752288832342,
+							"parameters": {
+								"variable": "second",
+								"value": "floor((timerManager.Timer.Duration(\"timer\") -timerManager.Timer.CurrentTime(\"timer\"))%60)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 780063384484572,
+							"parameters": {
+								"value": "str(second > 9 ? second : (\"0\"&second))"
+							}
+						}
+					],
+					"sid": 793324515563603
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SpriteFont",
+					"sid": 475866094975638,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 548062230594403,
+					"parameters": {
+						"text": "Functions.getTimerMinute & \":\" & Functions.getTimerSecond"
+					}
+				}
+			],
+			"sid": 168841215523227
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "timerManager",
+					"sid": 327356718125610,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"timer\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 639116091326782,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 708229042564410,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 174868715598232,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "SpriteFont",
+							"sid": 336569212735085,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 100531570098887,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 769387343308485,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 867914496805699,
+							"parameters": {
+								"text": "\"Waktu habis\""
+							}
+						}
+					],
+					"sid": 923194005973866,
+					"isOrBlock": true
 				}
 			]
 		}

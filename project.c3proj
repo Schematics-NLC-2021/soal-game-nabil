@@ -37,6 +37,14 @@
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
 		}
 	],
 	"uniqueId": "eow7ned3r4u",
@@ -48,7 +56,8 @@
 			"Browser",
 			"SoalGameBG",
 			"scoreframe",
-			"Tombol"
+			"Tombol",
+			"timerManager"
 		],
 		"subfolders": []
 	},
