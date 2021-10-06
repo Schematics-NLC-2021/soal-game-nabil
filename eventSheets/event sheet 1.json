@@ -189,10 +189,10 @@
 				{
 					"id": "start-timer",
 					"objectClass": "timerManager",
-					"sid": 394982341602169,
+					"sid": 277941456331834,
 					"behaviorType": "Timer",
 					"parameters": {
-						"duration": "6",
+						"duration": "600",
 						"type": "once",
 						"tag": "\"timer\""
 					}
