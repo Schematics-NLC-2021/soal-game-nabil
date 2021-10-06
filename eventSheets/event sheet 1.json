@@ -1142,6 +1142,15 @@
 						"comparison": 0,
 						"value": "3"
 					}
+				},
+				{
+					"id": "is-timer-running",
+					"objectClass": "timerManager",
+					"sid": 988397728510000,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"timer\""
+					}
 				}
 			],
 			"actions": [
@@ -1234,13 +1243,12 @@
 					}
 				},
 				{
-					"id": "pause-resume-timer",
+					"id": "stop-timer",
 					"objectClass": "timerManager",
-					"sid": 114562761553160,
+					"sid": 785366694335512,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "\"timer\"",
-						"state": "paused"
+						"tag": "\"timer\""
 					}
 				},
 				{
