@@ -132,6 +132,46 @@
 			"sid": 347182203103582
 		},
 		{
+			"eventType": "variable",
+			"name": "gameOver",
+			"type": "string",
+			"initialValue": "Silahkan tutup soal game ini dan kembali ke game utama",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 948722072573754
+		},
+		{
+			"eventType": "variable",
+			"name": "timesUp",
+			"type": "string",
+			"initialValue": "Waktu Habis",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 529360542613867
+		},
+		{
+			"eventType": "variable",
+			"name": "submitting",
+			"type": "string",
+			"initialValue": "Sedang mengirim skor",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 309007282029495
+		},
+		{
+			"eventType": "variable",
+			"name": "submitted",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 923090493643074
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -149,12 +189,21 @@
 				{
 					"id": "start-timer",
 					"objectClass": "timerManager",
-					"sid": 390903378046506,
+					"sid": 394982341602169,
 					"behaviorType": "Timer",
 					"parameters": {
-						"duration": "600",
+						"duration": "6",
 						"type": "once",
 						"tag": "\"timer\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 468661395153128,
+					"parameters": {
+						"variable": "submitted",
+						"value": "false"
 					}
 				}
 			],
@@ -371,6 +420,15 @@
 						"click-type": "clicked",
 						"object-clicked": "TombolAngka"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 392817533465150,
+					"parameters": {
+						"variable": "submitted"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "is-animation-playing",
@@ -792,6 +850,15 @@
 						"click-type": "clicked",
 						"object-clicked": "Tombol"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 116664097411444,
+					"parameters": {
+						"variable": "submitted"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [],
@@ -951,16 +1018,16 @@
 					],
 					"actions": [
 						{
-							"type": "script",
-							"script": "parent.c3_callFunction(\"sendScore\", [runtime.globalVars.score]);\nconsole.log(runtime.globalVars.score + \" dikirim\");"
-						},
-						{
 							"id": "set-animation-frame",
 							"objectClass": "Tombol",
 							"sid": 215149297956731,
 							"parameters": {
 								"frame-number": "1"
 							}
+						},
+						{
+							"callFunction": "submit",
+							"sid": 666304358578443
 						}
 					],
 					"sid": 152833323731638
@@ -1102,46 +1169,14 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"callFunction": "submit",
+					"sid": 361177501248806
+				}
+			],
 			"sid": 639116091326782,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
-							"sid": 708229042564410,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "4"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
-							"sid": 174868715598232,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "SpriteFont",
-							"sid": 336569212735085,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 100531570098887,
-					"isOrBlock": true
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1158,16 +1193,136 @@
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "SpriteFont",
+							"sid": 901751887359276,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "SpriteFont",
-							"sid": 867914496805699,
+							"sid": 807474127092652,
 							"parameters": {
-								"text": "\"Waktu habis\""
+								"text": "timesUp"
 							}
 						}
 					],
 					"sid": 923194005973866,
 					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"functionName": "submit",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 345673505195008,
+					"parameters": {
+						"variable": "submitted",
+						"value": "true"
+					}
+				},
+				{
+					"id": "pause-resume-timer",
+					"objectClass": "timerManager",
+					"sid": 114562761553160,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"timer\"",
+						"state": "paused"
+					}
+				},
+				{
+					"type": "script",
+					"script": "parent.c3_callFunction(\"sendScore\", [runtime.globalVars.score]);\nconsole.log(runtime.globalVars.score + \" dikirim\");"
+				}
+			],
+			"sid": 739011487319843,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 481782610389596,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "SpriteFont",
+							"sid": 411458321176856,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 157517883746915,
+							"parameters": {
+								"text": "submitting"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 663564812897728,
+							"parameters": {
+								"seconds": "random(1,3)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 278361465554625,
+							"parameters": {
+								"text": "gameOver"
+							}
+						}
+					],
+					"sid": 273338443907792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 357248147734963,
+							"parameters": {
+								"animation": "\"reset\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 396251618995154,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 171328573819763
 				}
 			]
 		}
