@@ -13,6 +13,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "maxTotal",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 293824350738113
+		},
+		{
+			"eventType": "variable",
+			"name": "minTotal",
+			"type": "number",
+			"initialValue": "-8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 529686607424952
+		},
+		{
+			"eventType": "variable",
 			"name": "Neighbours",
 			"type": "string",
 			"initialValue": "1,0|-1,0|0,1|0,-1|1,1|1,-1|-1,1|-1,-1",
@@ -1157,15 +1177,6 @@
 					"parameters": {
 						"text": "Functions.getTimerMinute & \":\" & Functions.getTimerSecond"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 843145040187484,
-					"parameters": {
-						"type": "log",
-						"message": "Functions.getTimerSecond"
-					}
 				}
 			],
 			"sid": 168841215523227
@@ -1252,10 +1263,6 @@
 						"variable": "submitted",
 						"value": "true"
 					}
-				},
-				{
-					"type": "script",
-					"script": "parent.c3_callFunction(\"sendScore\", [runtime.globalVars.score]);\nconsole.log(runtime.globalVars.score + \" dikirim\");"
 				}
 			],
 			"sid": 739011487319843,
@@ -1357,6 +1364,36 @@
 						}
 					],
 					"sid": 781238514215465
+				},
+				{
+					"eventType": "variable",
+					"name": "convertedScore",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 208518497397392
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 977673082533600,
+							"parameters": {
+								"variable": "convertedScore",
+								"value": "(1 - ((minTotal - score) / (minTotal - maxTotal))) * 30"
+							}
+						},
+						{
+							"type": "script",
+							"script": "parent.c3_callFunction(\"sendScore\", [localVars.convertedScore]);\nconsole.log(localVars.convertedScore + \" dikirim\");"
+						}
+					],
+					"sid": 657090161309216
 				}
 			]
 		}
