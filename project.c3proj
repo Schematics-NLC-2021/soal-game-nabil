@@ -39,9 +39,9 @@
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
@@ -57,7 +57,7 @@
 			"SoalGameBG",
 			"scoreframe",
 			"Tombol",
-			"timerManager"
+			"Date"
 		],
 		"subfolders": []
 	},

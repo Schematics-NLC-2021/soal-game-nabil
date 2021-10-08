@@ -133,6 +133,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "endtime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 748540123647564
+		},
+		{
+			"eventType": "variable",
 			"name": "gameOver",
 			"type": "string",
 			"initialValue": "Silahkan tutup soal game ini dan kembali ke game utama",
@@ -187,23 +197,21 @@
 					"sid": 882988334957343
 				},
 				{
-					"id": "start-timer",
-					"objectClass": "timerManager",
-					"sid": 277941456331834,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "600",
-						"type": "once",
-						"tag": "\"timer\""
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 468661395153128,
 					"parameters": {
 						"variable": "submitted",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 724394185239325,
+					"parameters": {
+						"variable": "endtime",
+						"value": "Date.Now + 600000"
 					}
 				}
 			],
@@ -1035,6 +1043,38 @@
 			]
 		},
 		{
+			"eventType": "variable",
+			"name": "difference",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 836526960960951
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 613429792225864
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 835924077140709,
+					"parameters": {
+						"variable": "difference",
+						"value": "endtime - Date.Now"
+					}
+				}
+			],
+			"sid": 224590048293550
+		},
+		{
 			"functionName": "getTimerMinute",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1043,44 +1083,17 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
-			"sid": 310233406212083,
-			"children": [
+			"actions": [
 				{
-					"eventType": "variable",
-					"name": "minute",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 630727059658234
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 680729154903546,
-							"parameters": {
-								"variable": "minute",
-								"value": "floor((timerManager.Timer.Duration(\"timer\") -timerManager.Timer.CurrentTime(\"timer\"))/60)"
-							}
-						},
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 114065937315412,
-							"parameters": {
-								"value": "str(minute > 9 ? minute : (\"0\"&minute))"
-							}
-						}
-					],
-					"sid": 908620811825651
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 251406230601821,
+					"parameters": {
+						"value": "str(Date.ToTimerMinutes(difference) > 9 ? Date.ToTimerMinutes(difference) : (\"0\"&Date.ToTimerMinutes(difference)))"
+					}
 				}
-			]
+			],
+			"sid": 310233406212083
 		},
 		{
 			"functionName": "getTimerSecond",
@@ -1091,48 +1104,30 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
-			"sid": 164777314671265,
-			"children": [
+			"actions": [
 				{
-					"eventType": "variable",
-					"name": "second",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 114800883547331
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 433752288832342,
-							"parameters": {
-								"variable": "second",
-								"value": "floor((timerManager.Timer.Duration(\"timer\") -timerManager.Timer.CurrentTime(\"timer\"))%60)"
-							}
-						},
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 780063384484572,
-							"parameters": {
-								"value": "str(second > 9 ? second : (\"0\"&second))"
-							}
-						}
-					],
-					"sid": 793324515563603
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 414457450428295,
+					"parameters": {
+						"value": "str(Date.ToTimerSeconds(difference) > 9 ? Date.ToTimerSeconds(difference) : (\"0\"&Date.ToTimerSeconds(difference)))"
+					}
 				}
-			]
+			],
+			"sid": 164777314671265
 		},
 		{
 			"eventType": "block",
 			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 235976071770882,
+					"parameters": {
+						"variable": "submitted"
+					},
+					"isInverted": true
+				},
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "SpriteFont",
@@ -1144,12 +1139,13 @@
 					}
 				},
 				{
-					"id": "is-timer-running",
-					"objectClass": "timerManager",
-					"sid": 988397728510000,
-					"behaviorType": "Timer",
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 670864484666846,
 					"parameters": {
-						"tag": "\"timer\""
+						"variable": "difference",
+						"comparison": 5,
+						"value": "0"
 					}
 				}
 			],
@@ -1161,6 +1157,15 @@
 					"parameters": {
 						"text": "Functions.getTimerMinute & \":\" & Functions.getTimerSecond"
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 843145040187484,
+					"parameters": {
+						"type": "log",
+						"message": "Functions.getTimerSecond"
+					}
 				}
 			],
 			"sid": 168841215523227
@@ -1169,13 +1174,19 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-timer",
-					"objectClass": "timerManager",
-					"sid": 327356718125610,
-					"behaviorType": "Timer",
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 451795036534753,
 					"parameters": {
-						"tag": "\"timer\""
+						"variable": "difference",
+						"comparison": 2,
+						"value": "0"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 693335819140189
 				}
 			],
 			"actions": [
@@ -1240,15 +1251,6 @@
 					"parameters": {
 						"variable": "submitted",
 						"value": "true"
-					}
-				},
-				{
-					"id": "stop-timer",
-					"objectClass": "timerManager",
-					"sid": 785366694335512,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "\"timer\""
 					}
 				},
 				{
@@ -1331,6 +1333,30 @@
 						}
 					],
 					"sid": 171328573819763
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tombol",
+							"sid": 202999313308861,
+							"parameters": {
+								"animation": "\"submit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tombol",
+							"sid": 593380688790807,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 781238514215465
 				}
 			]
 		}
