@@ -228,10 +228,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 724394185239325,
+					"sid": 858632378050161,
 					"parameters": {
 						"variable": "endtime",
-						"value": "Date.Now + 600000"
+						"value": "Date.Now + 6000"
 					}
 				}
 			],
@@ -468,6 +468,10 @@
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "playBlip",
+					"sid": 215568394293975
+				},
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
@@ -925,6 +929,10 @@
 					],
 					"actions": [
 						{
+							"callFunction": "playTap",
+							"sid": 179902369577660
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 120705712790467,
@@ -1056,6 +1064,10 @@
 						{
 							"callFunction": "submit",
 							"sid": 666304358578443
+						},
+						{
+							"callFunction": "playTap",
+							"sid": 331326002285970
 						}
 					],
 					"sid": 152833323731638
@@ -1204,6 +1216,10 @@
 				{
 					"callFunction": "submit",
 					"sid": 361177501248806
+				},
+				{
+					"callFunction": "playTap",
+					"sid": 289931382380051
 				}
 			],
 			"sid": 639116091326782,
@@ -1396,6 +1412,55 @@
 					"sid": 657090161309216
 				}
 			]
+		},
+		{
+			"functionName": "playBlip",
+			"functionDescription": "",
+			"functionCategory": "sfx",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 126164810978267,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"blip\"&(turn%2)+1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 792755454837089
+		},
+		{
+			"functionName": "playTap",
+			"functionDescription": "",
+			"functionCategory": "sfx",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 327496803814240,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 466332745860957
 		}
 	],
 	"sid": 184656483622198

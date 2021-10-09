@@ -494,7 +494,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "1. Pilih kotak yang berwarna hijau dengan mengklik kotak tersebut",
+						"text": "1. Pilih kotak yang berwarna hijau dengan mengklik kotak tersebut.",
 						"enable-bbcode": true,
 						"character-width": 37,
 						"character-height": 40,
@@ -534,7 +534,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "2. Kotak yang bisa dipilih adalah kotak yang berada di sekitar kotak yang dipilih sebelumnya",
+						"text": "2. Kotak yang bisa dipilih adalah kotak yang berada di sekitar kotak yang dipilih sebelumnya.",
 						"enable-bbcode": true,
 						"character-width": 37,
 						"character-height": 40,
@@ -558,7 +558,7 @@
 						"x": 39,
 						"y": 206.5,
 						"width": 414.66312605659255,
-						"height": 162.31579483753697,
+						"height": 103.31579483753697,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -574,7 +574,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "3. Bila tidak ada kotak yang tersedia dari petunjuk sebelumnya, maka semua kotak dapat dipilih",
+						"text": "3. Bila tidak ada kotak yang tersedia dari petunjuk sebelumnya, maka semua kotak dapat dipilih.",
 						"enable-bbcode": false,
 						"character-width": 37,
 						"character-height": 40,
@@ -598,7 +598,7 @@
 						"x": 39,
 						"y": 306.5,
 						"width": 414.66312605659255,
-						"height": 162.31579483753697,
+						"height": 139.31579483753697,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -614,7 +614,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "4. Langkah ganjil akan menambah total dengan nilai di kotak yang dipilih. Langkah genap akan mengurangi total",
+						"text": "4. Langkah ganjil akan menambah total dengan nilai di kotak yang dipilih. Langkah genap akan mengurangi total.",
 						"enable-bbcode": false,
 						"character-width": 37,
 						"character-height": 40,
@@ -654,7 +654,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "5. Pilihlah semua kotak hingga nilai total sekecil mungkin",
+						"text": "5. Pilihlah semua kotak hingga nilai total sekecil mungkin.",
 						"enable-bbcode": false,
 						"character-width": 37,
 						"character-height": 40,

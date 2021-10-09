@@ -45,6 +45,14 @@
 			"author": "Scirra",
 			"version": "r260",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r260",
+			"bundled": false
 		}
 	],
 	"uniqueId": "eow7ned3r4u",
@@ -57,7 +65,8 @@
 			"SoalGameBG",
 			"scoreframe",
 			"Tombol",
-			"Date"
+			"Date",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -85,7 +94,23 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "blip1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 225393280731652
+				},
+				{
+					"name": "blip2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 908744685511063
+				},
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 493487894260481
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
