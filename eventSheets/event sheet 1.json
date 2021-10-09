@@ -45,7 +45,7 @@
 			"eventType": "variable",
 			"name": "startX",
 			"type": "number",
-			"initialValue": "416",
+			"initialValue": "559",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "startY",
 			"type": "number",
-			"initialValue": "208",
+			"initialValue": "209",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -272,12 +272,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 182330739310075,
+									"sid": 172184459479523,
 									"parameters": {
 										"object-to-create": "TombolAngka",
 										"layer": "0",
-										"x": "416+ 152*loopindex(\"j\")",
-										"y": "208+ 152*loopindex(\"i\")",
+										"x": "startX + 152*loopindex(\"j\")",
+										"y": "startY+ 152*loopindex(\"i\")",
 										"create-hierarchy": false
 									}
 								},
@@ -350,7 +350,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 591612660180865,
 							"parameters": {
 								"instance-variable": "id",
@@ -360,7 +360,7 @@
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 134338478820580,
 							"parameters": {
 								"instance-variable": "id",
@@ -372,7 +372,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 940283283315246,
 							"parameters": {
 								"visibility": "invisible"
@@ -389,7 +389,7 @@
 			"conditions": [
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 532283484123252,
 					"parameters": {
 						"instance-variable": "id",
@@ -401,7 +401,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 651534197719600,
 					"parameters": {
 						"text": "score"
@@ -415,7 +415,7 @@
 			"conditions": [
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 397430329818034,
 					"parameters": {
 						"instance-variable": "id",
@@ -427,7 +427,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 448450420056213,
 					"parameters": {
 						"text": "\"Jatah : \"&Reset"
@@ -1150,7 +1150,7 @@
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 475866094975638,
 					"parameters": {
 						"instance-variable": "id",
@@ -1172,7 +1172,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "SpriteFont",
+					"objectClass": "Text",
 					"sid": 548062230594403,
 					"parameters": {
 						"text": "Functions.getTimerMinute & \":\" & Functions.getTimerSecond"
@@ -1213,7 +1213,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 769387343308485,
 							"parameters": {
 								"instance-variable": "id",
@@ -1225,7 +1225,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 901751887359276,
 							"parameters": {
 								"visibility": "visible"
@@ -1233,7 +1233,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 807474127092652,
 							"parameters": {
 								"text": "timesUp"
@@ -1272,7 +1272,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 481782610389596,
 							"parameters": {
 								"instance-variable": "id",
@@ -1284,7 +1284,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 411458321176856,
 							"parameters": {
 								"visibility": "visible"
@@ -1292,7 +1292,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 157517883746915,
 							"parameters": {
 								"text": "submitting"
@@ -1308,7 +1308,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont",
+							"objectClass": "Text",
 							"sid": 278361465554625,
 							"parameters": {
 								"text": "gameOver"

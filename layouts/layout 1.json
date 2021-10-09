@@ -82,8 +82,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 278,
-						"y": 150,
+						"x": 559,
+						"y": 209.5,
 						"width": 120.70625501605127,
 						"height": 120.70625501605127,
 						"originX": 0.5,
@@ -111,8 +111,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 922.5,
-						"y": 199.5,
+						"x": 1082,
+						"y": 218.5,
 						"width": 156,
 						"height": 99,
 						"originX": 0.5,
@@ -128,7 +128,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "Text",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -151,8 +151,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 844.0894144777992,
-						"y": 203.09999471198887,
+						"x": 1003,
+						"y": 221.5,
 						"width": 155.66312605659255,
 						"height": 42.31579483753697,
 						"originX": 0,
@@ -180,8 +180,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 923,
-						"y": 375.6781269039969,
+						"x": 1082,
+						"y": 394.5,
 						"width": 156,
 						"height": 56,
 						"originX": 0.5,
@@ -197,7 +197,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "Text",
 					"properties": {
 						"text": "Jatah : 1",
 						"enable-bbcode": true,
@@ -220,8 +220,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 923,
-						"y": 421.41015488383744,
+						"x": 1082,
+						"y": 439.5,
 						"width": 155.66312605659255,
 						"height": 42.31579483753697,
 						"originX": 0.5,
@@ -249,8 +249,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 923,
-						"y": 298,
+						"x": 1082,
+						"y": 316.5,
 						"width": 156,
 						"height": 56,
 						"originX": 0.5,
@@ -266,7 +266,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "Text",
 					"properties": {
 						"text": "00:00",
 						"enable-bbcode": true,
@@ -289,8 +289,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 824,
-						"y": 452.9949764753814,
+						"x": 983,
+						"y": 471.5,
 						"width": 194.66312605659255,
 						"height": 42.31579483753697,
 						"originX": 0,
@@ -306,7 +306,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "Text",
 					"properties": {
 						"text": "Waktu habis",
 						"enable-bbcode": true,
@@ -329,8 +329,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 727.3623139539244,
-						"y": 509.77567757489163,
+						"x": 886,
+						"y": 528.5,
 						"width": 390.66312605659255,
 						"height": 42.31579483753697,
 						"originX": 0,
@@ -346,7 +346,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "Text",
 					"properties": {
 						"text": "Silahkan tutup soal game ini dan kembali ke game utama",
 						"enable-bbcode": true,
@@ -369,10 +369,316 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 243.02760939385666,
-						"y": 608.5104215611033,
-						"width": 793.6631260565925,
+						"x": 500,
+						"y": 613,
+						"width": 716.6631260565925,
+						"height": 92.31579483753697,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Petunjuk",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 12,
+					"instanceVariables": {
+						"id": 6
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 78.5,
+						"width": 414.66312605659255,
 						"height": 81.31579483753697,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TombolAngka",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Unpicked",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"instanceVariables": {
+						"xGrid": 0,
+						"yGrid": 0,
+						"state": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 711,
+						"y": 209.5,
+						"width": 120.70625501605127,
+						"height": 120.70625501605127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TombolAngka",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Unpicked",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {
+						"xGrid": 0,
+						"yGrid": 0,
+						"state": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 863,
+						"y": 209.5,
+						"width": 120.70625501605127,
+						"height": 120.70625501605127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "1. Pilih kotak yang berwarna hijau dengan mengklik kotak tersebut",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 18,
+					"instanceVariables": {
+						"id": 999
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 138.5,
+						"width": 414.66312605659255,
+						"height": 64.16499418947862,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "2. Kotak yang bisa dipilih adalah kotak yang berada di sekitar kotak yang dipilih sebelumnya",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 19,
+					"instanceVariables": {
+						"id": 999
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 206.5,
+						"width": 414.66312605659255,
+						"height": 162.31579483753697,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "3. Bila tidak ada kotak yang tersedia dari petunjuk sebelumnya, maka semua kotak dapat dipilih",
+						"enable-bbcode": false,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 20,
+					"instanceVariables": {
+						"id": 999
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 306.5,
+						"width": 414.66312605659255,
+						"height": 162.31579483753697,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "4. Langkah ganjil akan menambah total dengan nilai di kotak yang dipilih. Langkah genap akan mengurangi total",
+						"enable-bbcode": false,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 21,
+					"instanceVariables": {
+						"id": 999
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 439.5,
+						"width": 414.66312605659255,
+						"height": 137.31579483753697,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "5. Pilihlah semua kotak hingga nilai total sekecil mungkin",
+						"enable-bbcode": false,
+						"character-width": 37,
+						"character-height": 40,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": " [[8,\" \"],[7,\"'\"],[8,\"Il!|\"],[9,\"i.,;:\"],[12,\"`\"],[13,\"j\\\"[]\"],[14,\"r-()\"],[16,\"ft°\"],[17,\"Jcs*\"],[18,\"aehnuz1?+=<>\"],[19,\"EFLbdkpqy23579~\\/£\"],[20,\"Povx068_\"],[21,\"BZg4#$€\"],[22,\"CRS\"],[23,\"GKTU\"],[24,\"DHNX\"],[25,\"Y\"],[26,\"AOV&\"],[27,\"Qmw\"],[28,\"M\"],[33,\"@\"],[34,\"%\"],[35,\"W\"]]",
+						"scale": 0.8,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 22,
+					"instanceVariables": {
+						"id": 999
+					},
+					"behaviors": {},
+					"world": {
+						"x": 39,
+						"y": 576.5,
+						"width": 414.66312605659255,
+						"height": 65.31579483753697,
 						"originX": 0,
 						"originY": 0,
 						"color": [
