@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "maxTotal",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "22",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -228,10 +228,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 858632378050161,
+					"sid": 536263282077346,
 					"parameters": {
 						"variable": "endtime",
-						"value": "Date.Now + 6000"
+						"value": "Date.Now + 600000"
 					}
 				}
 			],
