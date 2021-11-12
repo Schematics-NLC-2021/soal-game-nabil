@@ -1310,6 +1310,7 @@
 							"id": "set-text",
 							"objectClass": "Text",
 							"sid": 157517883746915,
+							"disabled": true,
 							"parameters": {
 								"text": "submitting"
 							}
@@ -1318,6 +1319,7 @@
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 663564812897728,
+							"disabled": true,
 							"parameters": {
 								"seconds": "random(1,3)"
 							}
@@ -1406,10 +1408,11 @@
 						},
 						{
 							"type": "script",
-							"script": "parent.c3_callFunction(\"sendScore\", [localVars.convertedScore]);\nconsole.log(localVars.convertedScore + \" dikirim\");"
+							"script": "parent.c3_callFunction(\"sendScore\", [localVars.convertedScore]);\n// console.log(localVars.convertedScore + \" dikirim\");"
 						}
 					],
-					"sid": 657090161309216
+					"sid": 657090161309216,
+					"disabled": true
 				}
 			]
 		},
